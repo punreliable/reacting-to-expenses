@@ -1,15 +1,16 @@
 import './ExpenseItem.scss';
+import moment from 'moment';
 
 function ExpenseItem( props ) {
     return (
         <div className="expense-item">
             <div className="expense-item__date">
-                {props.date.toISOString()}
+                {moment(props.date).format("MM/DD/YYYY")}
             </div>
             <div className="expense-item__description">
                 <h3>{props.title}</h3>
-                <div className="expense-item__price">${props.amount}</div>
             </div>
+            <div className="expense-item__price">${props.amount}</div>
         </div>
     );
 

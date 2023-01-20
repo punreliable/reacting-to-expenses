@@ -6,31 +6,31 @@ function App() {
       id: "e1",
       title: "Rent",
       amount: 812,
-      date: new Date(2023, 1, 5),
+      date: new Date(2023, 0, 5),
     },
     {
       id: "e2",
       title: "Insurance",
       amount: 140,
-      date: new Date(2023, 1, 5),
+      date: new Date(2023, 0, 5),
     },
     {
       id: "e3",
       title: "Electrical",
       amount: 96.99,
-      date: new Date(2023, 1, 1),
+      date: new Date(2023, 0, 1),
     },
     {
       id: "e4",
       title: "Cable",
       amount: 116.99,
-      date: new Date(2023, 1, 15),
+      date: new Date(2023, 0, 15),
     },
     {
       id: "e5",
       title: "Car",
       amount: 210.00,
-      date: new Date(2023, 1, 15),
+      date: new Date(2023, 0, 15),
     },
   ];
 

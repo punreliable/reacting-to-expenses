@@ -6,7 +6,9 @@ body {
 }
 
 .expense-item {
+  
   display: flex;
+  flex-direction:row;
   justify-content: space-between;
   align-items: center;
   background-color: $color-grey-bright;
@@ -22,38 +24,39 @@ body {
   }
 
   .expense-item__date {
-    align-items: flex-end;
     color: $color-white;
-    display: flex;
-    flex-direction: column;
-    flex-flow: column-reverse;
     flex-grow: 0;
     font-size: 1.25rem;
     gap: 1rem;
   }
 
   .expense-item__description {
-    align-items: flex-end;
+
+    align-items: flex-start;
     color: $color-white;
     display: flex;
     flex-direction: column;
     flex-flow: column-reverse;
     flex-grow: 1;
     gap: 1rem;
+    min-width: 40%;
 
     h3 {
       font-size: 1.25rem;
+      margin: 0;
+      text-align: left;
+      padding-left: 2rem;
     }
-
+  }
     .expense-item__price {
-      align-items: flex-end;
+      // align-items: flex-end;
       background-color: $cedar-chest;
       border: 4px solid $color-white;
       border-radius: 1rem;
       color: $color-white;
-      display: flex;
-      flex-direction: column;
-      flex-flow: column-reverse;
+      // display: flex;
+      // flex-direction: column;
+      // flex-flow: column-reverse;
       flex-grow: 0;
       font-size: 1.25rem;
       font-weight: bold;
@@ -61,7 +64,7 @@ body {
       padding: 0.5rem 1.5rem;
     }
   }
-}
+
 
 h2 {
   color: $color-white;
@@ -69,8 +72,21 @@ h2 {
 
   &.title {
     margin: auto;
-    padding-top: 2rem;
+    padding: 3rem 2rem 2rem 2rem;
     text-align: center;
     width: 100%;
   }
+}
+
+.money {
+
+width: 100%;
+height: 10rem;
+background-image:url('../../public/money.svg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+margin: auto;
+
+
 }
