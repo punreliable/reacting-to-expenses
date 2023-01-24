@@ -1,44 +1,41 @@
-import ExpenseItem from "./components/ExpenseItem";
-import Expenses from "./components/Expenses";
+import React from 'react';
 
-function App() {
+import Expenses from './components/Expenses/Expenses';
+
+const App = () => {
   const expenses = [
     {
-      id: "e1",
-      title: "Rent",
-      amount: 812,
-      date: new Date(2023, 0, 5),
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: 'e3',
+      title: 'Car Insurance',
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
     },
     {
-      id: "e2",
-      title: "Insurance",
-      amount: 140,
-      date: new Date(2023, 0, 5),
-    },
-    {
-      id: "e3",
-      title: "Electrical",
-      amount: 96.99,
-      date: new Date(2023, 0, 1),
-    },
-    {
-      id: "e4",
-      title: "Cable",
-      amount: 116.99,
-      date: new Date(2023, 0, 15),
-    },
-    {
-      id: "e5",
-      title: "Car",
-      amount: 210.00,
-      date: new Date(2023, 0, 15),
+      id: 'e4',
+      title: 'New Desk (Wooden)',
+      amount: 450,
+      date: new Date(2021, 5, 12),
     },
   ];
 
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
+
   return (
     <div>
-      <h2 className="title">Reacting to Expenses</h2>
-      <Expenses items={expenses} className="expenses" />
+      <h2>Let's get started!</h2>
+      <Expenses items={expenses} />
     </div>
   );
 }
