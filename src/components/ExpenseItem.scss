@@ -1,5 +1,82 @@
 @import "../styles/variables";
 
+:root {
+  --li-scale: 1.25;
+  --li-scale-adj: 0.2;
+  --li-pb: 0.25em;
+}
+
+.expense-item:hover {
+  --li-pb: 0.75em;
+
+  scale: var(--li-scale);
+}
+
+/* Select list item before the hovered one */
+.expense-item:has(+ .expense-item:hover),
+/* Select list item after the hovered one */
+.expense-item:hover + .expense-item {
+  --li-pb: 0.15em;
+  --li-delay: 40ms;
+
+  scale: calc(var(--li-scale) - var(--li-scale-adj));
+  opacity: 0.85;
+}
+
+/* When a list item is being hovered,
+select list items not hovered, or before/after hover */
+.expenses:has(> :hover) .expense-item:not(:hover, :has(+ :hover), .expense-item:hover + *) {
+  --list-pb: 0;
+  --li-delay: 60ms;
+
+  scale: calc(1 - var(--li-scale-adj));
+  opacity: 0.75;
+}
+
+.expenses {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  font-size: 1.15rem;
+}
+
+.expense-item {
+  transition: all cubic-bezier(0.4, 0.8, 0.71, 1.03) 180ms;
+  transition-delay: var(--li-delay, 0);
+  padding-block: var(--li-pb);
+  margin-inline: auto;
+  width: 15ch;
+
+  span {
+    display: block;
+    text-align: center;
+    padding: 0.5em 1em;
+    background-color: white;
+    border-radius: 0.5em;
+  }
+}
+
+/* :has() support alert */
+aside {
+  max-width: 30ch;
+  padding: 1rem;
+  background-color: palegoldenrod;
+  border-radius: 0.5rem;
+  margin-block-end: 1rem;
+  line-height: 1.3;
+
+  code {
+    font-size: 1.25rem;
+    color: firebrick;
+  }
+}
+
+@supports selector(:has(+ *)) {
+  aside {
+    display: none;
+  }
+}
+
 body {
   background-color: $color-blue;
   font-size: 16px;

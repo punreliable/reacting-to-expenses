@@ -1,2 +1,40 @@
 // ExpenseDate Component Styles
+@import '../styles/variables';
 
+.expense-item__date {
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 1rem;
+    border: solid 2px $color-white;
+    height: 100%;
+    margin: 1rem;
+    padding: .25rem;
+    aspect-ratio: 1;
+    max-width: 33%;
+    min-width: 10%;
+    width: auto;
+
+    text-align: center;
+
+    .date__month {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .date__year {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .date__day {
+
+        font-size: 3rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+
+    }
+}
